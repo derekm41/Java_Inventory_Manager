@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableCell?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="893.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <Button fx:id="exitButton" layoutX="847.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="263.0" style="-fx-border-color: black; -fx-border-radius: 7; -fx-background-color: white; -fx-background-radius: 7;" text="Inventory Management System" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="21.0" layoutY="131.0" prefHeight="261.0" prefWidth="417.0" style="-fx-border-color: black; -fx-border-radius: 20;">
+         <children>
+            <Button fx:id="deletePartButton" layoutX="347.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#deletePart" text="Delete" />
+            <Button fx:id="modifyPartButton" layoutX="286.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#modifyPart" text="Modify" />
+            <Button fx:id="addPartButton" layoutX="13.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#addPart" text="Add" />
+            <Button fx:id="searchPartButton" layoutX="340.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#searchPart" text="Search" />
+            <TextField fx:id="searchPart" layoutX="163.0" layoutY="13.0" prefHeight="25.0" prefWidth="167.0" promptText="Search by Part ID or Name" />
+            <Label layoutX="14.0" layoutY="15.0" text="Parts">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="partTable" layoutX="8.0" layoutY="47.0" prefHeight="167.0" prefWidth="400.0" style="-fx-border-color: blue;">
+              <columns>
+                <TableColumn fx:id="partIdColumn" prefWidth="100.0" text="Part ID" >
+                 <cellValueFactory>
+                    <PropertyValueFactory property ="partID" />
+                 </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="partNameColumn" prefWidth="100.0" text="Part Name" >
+                 <cellValueFactory>
+                    <PropertyValueFactory property ="partName" />
+                 </cellValueFactory>
+                </TableColumn>
+                  <TableColumn fx:id="partInvCountColumn" prefWidth="100.0" text="Inv. Count" >
+                 <cellValueFactory>
+                    <PropertyValueFactory property ="partInStock" />
+                 </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="partPriceColumn" prefWidth="100.0" text="Part Price" >
+                 <cellValueFactory>
+                    <PropertyValueFactory property ="partPrice" />
+                 </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="447.0" layoutY="131.0" prefHeight="261.0" prefWidth="417.0" style="-fx-border-color: black; -fx-border-radius: 20;">
+         <children>
+            <Button fx:id="deleteProductButton" layoutX="352.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#deleteProduct" text="Delete" />
+            <Button fx:id="modifyProductButton" layoutX="286.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#modifyProduct" text="Modify" />
+            <Button fx:id="addProductButton" layoutX="13.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#addProduct" text="Add" />
+            <Button fx:id="searchProductButton" layoutX="340.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#searchProduct" text="Search" />
+            <TextField fx:id="searchProduct" layoutX="163.0" layoutY="13.0" prefHeight="25.0" prefWidth="167.0" promptText="Search by Product ID or Name" />
+            <Label layoutX="14.0" layoutY="15.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="productTable" layoutX="8.0" layoutY="47.0" prefHeight="167.0" prefWidth="400.0" style="-fx-border-color: blue;">
+               <columns>
+                  <TableColumn fx:id="productIdColumn" prefWidth="100.0" text="Product ID" >
+                   <cellValueFactory>
+                       <PropertyValueFactory property = "id" />
+                   </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="productNameColumn" prefWidth="100.0" text="Product Name" >
+                   <cellValueFactory>
+                       <PropertyValueFactory property ="name" />
+                   </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="productInvCountColumn" prefWidth="100.0" text="Inv. Count" >
+                      <cellValueFactory>
+                          <PropertyValueFactory property ="stock" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="productPriceColumn" prefWidth="100.0" text="Product Price" >
+                      <cellValueFactory>
+                          <PropertyValueFactory property ="price" />
+                      </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
